@@ -50,3 +50,18 @@ class MinimalRAG:
         # 4. Add to graph database
         self.db.add_documents_and_chunks(chunks_with_embeddings)
         print("Added to graph database")
+
+    def process_query(self, query: str, top_k: int = 3) -> Dict[str, Any]:
+        """Process a query end-to-end"""
+        # Generate query embedding
+        query_embedding = generate_embeddings(
+            [{"text": query}], self.embedding_model_name
+        )[0]["embedding"]
+
+        # Retrieve context
+        context = retrieve_context(self.db, query_embedding, top_k)
+
+        # Generate answer
+        answer = generate_answer(query, context, self.llm_model)
+
+        return {"query": query, "answer": answer, "context": context}

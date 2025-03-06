@@ -112,7 +112,7 @@ The system follows a modular architecture:
 
 - `data_collector.py`: Modules for acquiring data from various sources
 - `text_processor.py`: Text processing, chunking, and embedding generation
-- `rag_engine.py`: Core RAG implementation with LLM integration
+- `engine.py`: Core RAG implementation with LLM integration
 - `graph_handler.py`: Neo4j database interaction
 - `app.py`: Streamlit user interface
 

@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+requests 
+beautifulsoup4 
+pandas 
+tqdm 
+streamlit 
+python-dotenv 
+sentence-transformers 
+py2neo 
+openai 
+numpy 
+argparse
+black
